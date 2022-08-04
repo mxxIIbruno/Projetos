@@ -7,6 +7,7 @@ total = float(input('Até quantos? R$'))
 CDI = 0.1315
 guardado_no_banco = entrada
 cont = 0
+cdi_acumulados = 0
 
 cdi_anual = guardado_no_banco * CDI
 cdi_mensal = cdi_anual / 12
@@ -18,6 +19,7 @@ print(f'Plano final: R${total:,.2f}\n')
 while guardado_no_banco <= total:
     cdi_anual = guardado_no_banco * CDI
     cdi_mensal = cdi_anual / 12
+    cdi_acumulados += cdi_mensal
 
     cont += 1
 
@@ -39,3 +41,4 @@ while guardado_no_banco <= total:
     print('===='*8)
 
 print(f'Você conquistou R${guardado_no_banco:,.2f} em\n{ano} ano(s) {cont % 12} mês(es)')
+print(f'Total de CDI acumulado R${cdi_acumulados:,.2f}')
